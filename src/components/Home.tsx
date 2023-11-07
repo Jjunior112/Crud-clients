@@ -39,13 +39,12 @@ const Home = () => {
                 <p>Nome</p>
                 <p>Email</p>
                 <p>Cliente desde</p>
-                <p>Editar</p>
                 <p>Excluir</p>
             </div>
             {
                 clients.map((item, index) => (
                     <div key={index}>
-                        <Clients firstName={item.firstName} lastName={item.lastName} email={item.email} since={item.since} />
+                        <Clients id={item._id} firstName={item.firstName} lastName={item.lastName} email={item.email} since={item.since} />
                     </div>
                 ))
             }

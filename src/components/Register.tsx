@@ -19,15 +19,25 @@ const Register = () => {
 
     // funções
 
+    const handlerDate = () => {
+
+
+
+
+    }
+
     const register = (e) => {
         e.preventDefault()
         if (firstName && lastName && email && since) {
-            const form = {
+            const date = since.split('-');
 
+            const newDate = `${date[2]}/${date[1]}/${date[0]}`
+
+            const form = {
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
-                since: since
+                since: newDate,
             }
 
             fetch(url, {
@@ -47,14 +57,16 @@ const Register = () => {
                     setSince('')
                 })
                 .then(() => {
-                    history('/', { state: { message: 'Produto cadastro com sucesso!' } })
+                    history('/', { state: { message: 'Cliente cadastro com sucesso!' } })
                 })
 
                 .catch(error => {
                     console.log(error);
                 })
         }
-        setMessage('empty')
+        else {
+            setMessage('empty')
+        }
     }
 
     return (

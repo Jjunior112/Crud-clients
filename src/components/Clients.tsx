@@ -1,5 +1,27 @@
+import { useState } from "react"
 
-const Clients = ({ firstName, lastName, email, since }) => {
+
+
+const Clients = ({ id, firstName, lastName, email, since }) => {
+
+    const [confirmation, setConfirmation] = useState('hide');
+
+    const showConfirm = () => {
+        if (confirmation === 'hide') {
+            setConfirmation('confirmation')
+        }
+        else {
+            setConfirmation('hide')
+        }
+    }
+
+    const deleteClient = () => {
+        fetch(`http://localhost:3000/clients/${id}`, {
+            method: 'DELETE',
+        })
+            .then(() => location.reload())
+
+    }
     return (
         <div>
 
@@ -7,9 +29,18 @@ const Clients = ({ firstName, lastName, email, since }) => {
                 <p>{firstName} {lastName}</p>
                 <p>{email}</p>
                 <p>{since}</p>
-                <p><button>Editar</button></p>
-                <p><button>Excluir</button></p>
-                
+                <p><button onClick={showConfirm} >Excluir</button></p>
+                <div className={confirmation}>
+                    <p>Tem certeza que deseja excluir esse cliente?</p>
+                    <div>
+                        <p>
+
+                            <button onClick={deleteClient}>Confirmar</button>
+                            <button onClick={showConfirm}>Cancelar</button>
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     )
