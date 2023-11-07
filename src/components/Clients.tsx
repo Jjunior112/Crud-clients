@@ -29,9 +29,9 @@ const Clients = ({ id, firstName, lastName, email, since }) => {
                 <p>{firstName} {lastName}</p>
                 <p>{email}</p>
                 <p>{since}</p>
-                <p><button onClick={showConfirm} >Excluir</button></p>
+                <p><button onClick={showConfirm}>Excluir</button></p>
                 <div className={confirmation}>
-                    <p>Tem certeza que deseja excluir esse cliente?</p>
+                    <p>Tem certeza que deseja excluir o(a) cliente <span>{firstName} {lastName}</span>?</p>
                     <div>
                         <p>
 

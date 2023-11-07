@@ -107,6 +107,16 @@ nav a:hover {
     padding: 1em;
     text-align: center;
 }
+.clients button{
+    margin: 0 auto;
+    background-color: var(--color4);
+    color: #fff;
+    border-radius: 5em;
+}
+.clients button:hover {
+    cursor: pointer;
+    background-color: var(--color5);
+}
 
 .info p {
     font-weight: 900;
@@ -163,7 +173,10 @@ label {
     flex-direction: column;
     color: #fff;
 }
-
+.confirmation span{
+    color: var(--error);
+    font-weight: 900;
+}
 .confirmation p button {
     margin: 0 auto;
     width: 15em;
