@@ -101,24 +101,35 @@ nav a:hover {
     grid-template-columns: repeat(4, 1fr);
 }
 
+.info-mobile {
+    display: none;
+}
+
 .info p,
-.clients p {
+.clients p,
+.info-mobile p {
     border: 1px solid #000000;
     padding: 1em;
     text-align: center;
 }
-.clients button{
+
+.clients button,
+.confirmation p button,
+.register button {
     margin: 0 auto;
     background-color: var(--color4);
     color: #fff;
     border-radius: 5em;
 }
-.clients button:hover {
+
+.clients button:hover,
+.register button:hover,
+.confirmation p button:hover {
     cursor: pointer;
     background-color: var(--color5);
 }
 
-.info p {
+.info p,.info-mobile p {
     font-weight: 900;
 }
 
@@ -132,21 +143,6 @@ label {
     width: 40%;
     margin: 0 auto;
     margin-top: .5em;
-}
-
-.register button {
-    margin: 0 auto;
-    width: 15em;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    background-color: var(--color4);
-    color: #fff;
-    border-radius: 5em;
-}
-
-.register button:hover {
-    cursor: pointer;
-    background-color: var(--color5);
 }
 
 .hide {
@@ -173,26 +169,16 @@ label {
     flex-direction: column;
     color: #fff;
 }
-.confirmation span{
+
+.confirmation span {
     color: var(--error);
     font-weight: 900;
 }
+
 .confirmation p button {
-    margin: 0 auto;
-    width: 15em;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    background-color: var(--color4);
-    color: #fff;
-    border-radius: 5em;
     margin-left: 1em;
-
 }
 
-.confirmation p button:hover {
-    cursor: pointer;
-    background-color: var(--color5);
-}
 
 footer {
     padding: 1em;
@@ -201,4 +187,54 @@ footer {
 
 footer p {
     color: var(--white);
+}
+
+@media(width<750px) {
+
+    .home,
+    .register,
+    .container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .clients-main {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        border-bottom: 1px solid #000000;
+        border-top: 1px solid #000000;
+    }
+
+    .clients,
+    .info-mobile {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .info p {
+        display: none;
+    }
+    
+
+    .clients p,
+    .info-mobile p {
+        width: 10em;
+        height: 2em;
+        font-size: smaller;
+        padding: .5em;
+    }
+   
+
+    .clients button,
+    .confirmation p button,
+    .register button {
+        font-size: smaller;
+        padding: .2em;
+
+    }
+
 }

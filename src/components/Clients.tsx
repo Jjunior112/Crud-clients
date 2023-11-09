@@ -1,8 +1,15 @@
-import { useState } from "react"
+import { FunctionComponent, useState } from "react"
 
+interface ClientsProps {
+    id: string
+    firstName: string
+    lastName: string
+    email: string
+    since: string
 
+}
 
-const Clients = ({ id, firstName, lastName, email, since }) => {
+const Clients: FunctionComponent<ClientsProps> = ({ id, firstName, lastName, email, since }) => {
 
     const [confirmation, setConfirmation] = useState('hide');
 
@@ -23,9 +30,16 @@ const Clients = ({ id, firstName, lastName, email, since }) => {
 
     }
     return (
-        <div>
+        <div className="clients-main">
+            <div className="info-mobile">
+                <p>Nome</p>
+                <p>Email</p>
+                <p>Cliente desde</p>
+                <p>Excluir</p>
+            </div>
 
             <div className="clients">
+
                 <p>{firstName} {lastName}</p>
                 <p>{email}</p>
                 <p>{since}</p>
